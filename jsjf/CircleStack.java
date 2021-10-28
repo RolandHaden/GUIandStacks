@@ -24,13 +24,12 @@ public class CircleStack<t> {
     }
 
     public void push(t element) {
-        if(top < stack.length) {
+
+        if (top >= stack.length) {
+            stack[0] = element;
+        }else if(top < stack.length) {
             stack[top] = element;
             top++;
-        }
-        if (top == stack.length) {
-            stack[0] = element;
-            //System.out.println("Replacing first value...");
         }
     }
 
